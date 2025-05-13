@@ -1,177 +1,113 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
-
-:root {
-    --mdc-theme-error: #B00020;
-    --mdc-outlined-card-outline-width: 2px;
-}
-
+/* login.components.css */
 .wrap-login {
-    height: 100vh;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    background: #E0F2F1; /* suave verde agua */
-    margin: 0 auto;
+  background: linear-gradient(135deg, #FFC72C 0%, #FFFFFF 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
 }
 
 .container {
-    background: #FFFFFF;
-    box-shadow: 0px 4px 12px #00695C33;
-    border-radius: 6px;
-    max-width: 768px;
-    margin: 0 auto;
-    width: 100%;
-    display: flex;
-    height: calc(100% - (65px + 65px));
-    justify-content: center;
-    align-items: center;
+  max-width: 440px;
+  width: 95%;
+  margin: 0 auto;
 }
 
 .login-box {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 280px; /* Reducido desde 328px */
-    padding: 20px;
-    box-shadow: inherit;
-    border-color: inherit;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(218, 41, 28, 0.15);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(5px);
+  border: 2px solid #DA291C;
+  transition: transform 0.3s ease;
 }
 
-
-.login-box mat-card-header {
-    width: 128px;
-    height: 128px;
-    padding: 0;
-    margin-bottom: 16px;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
+/* Campos de texto mejorados */
+.mat-form-field {
+  width: 100%;
+  margin: 25px 0;
 }
 
-.login-box mat-card-header img {
-    width: 160px;
-    height: auto;
-    border-radius: 0;
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  background-color: #FFF3E0 !important;
+  border-radius: 8px !important;
+  border: 2px solid #DA291C !important;
 }
 
-
-.mat-mdc-card-content {
-    padding: 0;
+.mat-form-field-label {
+  color: #DA291C !important;
+  font-weight: 600 !important;
 }
 
-.login-box mat-form-field {
-    border-color: #0000001F !important;
-    border-radius: 4px;
+.mat-input-element {
+  color: #2D2926 !important;
+  padding: 12px 16px !important;
+  font-size: 16px !important;
 }
 
-.mdc-text-field--invalid .mdc-text-field__input,
-.mdc-text-field .mdc-text-field__input,
-.form-field {
-    caret-color: #1976D2 !important; /* azul */
+/* Placeholder mejorado */
+::placeholder {
+  color: #DA291C99 !important;
+  font-style: italic;
+  font-weight: 400;
 }
 
-.form-field {
-    font-size: 16px;
-    letter-spacing: 0.15px !important;
-    color: #004D40 !important; /* verde oscuro */
+/* Botón acceder centrado perfectamente */
+.login-btn {
+  background: linear-gradient(45deg, #FFC72C, #FFD700) !important;
+  color: #DA291C !important;
+  border-radius: 8px !important;
+  min-width: 240px !important;
+  height: 54px;
+  font-size: 18px !important;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 4px 6px rgba(218, 41, 28, 0.2) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin: 25px auto 0;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: normal;
 }
 
-.mat-mdc-form-field-error-wrapper {
-    height: 18px;
+.login-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 12px rgba(218, 41, 28, 0.3) !important;
 }
 
-.login-box mat-label,
-.mat-mdc-form-field-error {
-    color: #1976D2 !important; /* azul */
+/* Mensajes de error alineados */
+mat-error {
+  color: #DA291C !important;
+  font-weight: 500;
+  font-size: 14px;
+  padding-left: 8px !important;
+  margin-top: 4px;
 }
 
-mat-form-field {
-    width: 100%;
+/* Alineación general */
+mat-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 0 15px !important;
 }
 
-.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-floating-label {
-    color: #1976D2;
-    text-align: left;
-    font-family: 'Roboto';
-    letter-spacing: 0.15px;
-    border: 2px solid #1976D2;
+.mcdonalds-logo {
+  width: 120px !important;
+  height: 120px !important;
+  padding: 15px;
+  background: #DA291C;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(218, 41, 28, 0.3);
+  transition: transform 0.3s ease;
+  margin: 0 auto 20px;
+  display: block;
 }
 
-.mdc-text-field--focused {
-    border: 2px solid #1976D2;
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: #DA291C !important;
+  box-shadow: 0 0 8px rgba(218, 41, 28, 0.2);
 }
-
-.login-box .mat-form-field-invalid .mat-form-field-outline {
-    border-color: #1976D2 !important;
-}
-
-.mdc-card__actions {
-    padding: 0;
-    min-height: 36px;
-}
-
-.mat-mdc-raised-button:not(:disabled) {
-    background-color: #43A047; /* verde */
-    box-shadow: 0px 3px 6px #00000029;
-    border-radius: 4px;
-    width: 98px;
-    text-align: left;
-    font-family: Roboto, Medium;
-    letter-spacing: 1.25px;
-    color: #FFFFFF;
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: 400;
-    transition: background-color 0.3s ease;
-}
-
-.mat-mdc-raised-button:not(:disabled):hover {
-    background-color: #388E3C; /* verde más oscuro al pasar el mouse */
-}
-
-mat-form-field .form-field {
-    color: #004D40 !important;
-}
-
-mat-card-actions {
-    display: flex;
-    justify-content: flex-end;
-}
-
-/* Responsive */
-@media(max-width:768px) {
-    .wrap-login {
-        background: #E0F2F1;
-        padding: 0 30px;
-    }
-
-    .container {
-        background: #FFFFFF;
-        height: auto;
-        padding: 22px 21px;
-        width: auto;
-        max-width: inherit;
-    }
-}
-
-@media(max-width:430px) {
-    .container {
-        background: #FFFFFF;
-        box-shadow: inherit;
-        display: block;
-        justify-content: inherit;
-        align-items: inherit;
-    }
-
-    .login-box {
-        width: 100%;
-    }
-}
-
-  
-  

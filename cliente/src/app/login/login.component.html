@@ -1,66 +1,48 @@
 <div class="wrap-login">
   <div class="container">
-    <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <mat-card class="login-box">
-        <mat-card-header class="login-header">
-          <img
-            mat-card-avatar
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_NIKE.svg/1280px-Logo_NIKE.svg.png"
-            alt="Logo de Nike"
-            class="logo"
-          />
-          <mat-card-title class="login-title">Iniciar Sesión</mat-card-title>
+        
+        <mat-card-header class="header">
+          <img mat-card-avatar
+            src="https://1000marcas.net/wp-content/uploads/2019/11/McDonalds-logo.png"
+            alt="mcdonalds" class="mcdonalds-logo">
         </mat-card-header>
 
-        <mat-card-content class="login-content">
-          <mat-form-field appearance="outline" class="form-field" floatLabel="always">
-            <mat-label>Correo Electrónico</mat-label>
-            <input
-              matInput
-              type="email"
-              placeholder="ejemplo@correo.com"
-              formControlName="email"
-              required
-              autocomplete="email"
-            />
-            <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
+        <mat-card-content>
+          <mat-form-field appearance="outline" class="mcd-field">
+            <mat-label class="mcd-label">Correo</mat-label>
+            <input matInput type="email" 
+                   placeholder="Ingrese su correo" 
+                   formControlName="email"
+                   class="mcd-input">
+            <mat-error class="mcd-error" *ngIf="loginForm.get('email')?.hasError('required')">
               Correo requerido
             </mat-error>
-            <mat-error *ngIf="loginForm.get('email')?.hasError('email')">
+            <mat-error class="mcd-error" *ngIf="loginForm.get('email')?.hasError('email')">
               Correo inválido
             </mat-error>
           </mat-form-field>
 
-          <mat-form-field appearance="outline" class="form-field" floatLabel="always">
-            <mat-label>Contraseña</mat-label>
-            <input
-              matInput
-              type="password"
-              placeholder="••••••••"
-              formControlName="password"
-              required
-              autocomplete="current-password"
-            />
-            <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+          <mat-form-field appearance="outline" class="mcd-field">
+            <mat-label class="mcd-label">Contraseña</mat-label>
+            <input matInput type="password" 
+                   placeholder="Ingrese su contraseña" 
+                   formControlName="password"
+                   class="mcd-input">
+            <mat-error class="mcd-error" *ngIf="loginForm.get('password')?.hasError('required')">
               Contraseña requerida
             </mat-error>
-            <mat-error *ngIf="loginForm.get('password')?.hasError('minlength')">
-              Mínimo 6 caracteres
+            <mat-error class="mcd-error" *ngIf="loginForm.get('password')?.hasError('minlength')">
+              La contraseña debe tener al menos 6 caracteres
             </mat-error>
           </mat-form-field>
         </mat-card-content>
 
-        <mat-card-actions class="login-actions">
-          <button
-            mat-raised-button
-            color="primary"
-            class="login-button"
-            type="submit"
-            [disabled]="loginForm.invalid"
-          >
-            Acceder
-          </button>
+        <mat-card-actions class="actions" >
+          <button mat-raised-button class="login-btn">Acceder</button>
         </mat-card-actions>
+        
       </mat-card>
     </form>
   </div>
