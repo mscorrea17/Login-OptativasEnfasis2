@@ -1,7 +1,5 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../db/db");
-const Like = require("./like.model");
-const Comment = require("./comment.model");
 
 const Post = sequelize.define(
   "Post",
@@ -22,7 +20,7 @@ const Post = sequelize.define(
       type: DataTypes.TEXT,
       allowNull: false,
       validate: {
-        notNull: { msg: "title is required" },
+        notNull: { msg: "content is required" },
       },
     },
     image: {
@@ -37,29 +35,5 @@ const Post = sequelize.define(
     timestamps: true,
   }
 );
-
-Post.hasMany(Like, {
-  foreignKey: "post_id",
-  sourceKey: "id",
-  as: "Likes"
-});
-
-Like.belongsTo(Post, {
-  foreignKey: "post_id",
-  targetKey: "id",
-  as: "Post"
-});
-
-Post.hasMany(Comment, {
-  foreignKey: "post_id",
-  sourceKey: "id",
-  as: "Comments"
-});
-
-Comment.belongsTo(Post, {
-  foreignKey: "post_id",
-  targetKey: "id",
-  as: "Post"
-});
 
 module.exports = Post;
